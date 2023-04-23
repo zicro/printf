@@ -9,16 +9,23 @@
 int get_flags(const char *format, int *i)
 {
 	/*" - + 0 # ' ' " -> "1 2 4 8 16"*/
-	int curr = *i + 1;
-	int size = 0;
+	int curr;
+	int flags = 0;
+	const char FLAGS_CH[] = {'-', '+', '0', ' ', '#', '\0'};
+	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
 
-	if (format[curr] == 'l')
-		size = S_LONG;
-	else if (format[curr] == 'h')
-		size = S_SHORT;
-	if (size == 0)
-		*i = curr - 1;
-	else
-		*i = curr;
-	return (size);
+
+	for (curr = *i + 1; format[curr] != '\0'; curr++)
+	{
+		for (j = 0; FLAGS_CH[j] != '\0'; j++)
+			if (format[curr] == FLAGS_CH[j])
+			{
+				flags = FLAGS_ARR[j];
+				break;
+			}
+		if (FLAGS_CH[j] == 0)
+			break;
+	}
+	*i = curr - 1;
+	return (flags);
 }
