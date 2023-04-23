@@ -19,8 +19,8 @@
 
 /**
  * struct put - structure for types printing
- * @t: type to print
- * @f: function to be printed
+ * @type: type to print
+ * @func: function to be printed
  */
 typedef struct put
 {
