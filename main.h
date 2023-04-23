@@ -16,7 +16,6 @@ typedef struct put
 } puts_list;
 
 int _putchar(char c);
-static int (*format_checker(const char *format))(va_list);
 int _printf(const char *format, ...);
 int put_char(va_list c);
 int put_string(va_list s);
