@@ -28,7 +28,7 @@ typedef struct put
 	int (*func)(va_list);
 } puts_list;
 
-
+int get_flags(const char *format, int *i);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int put_char(va_list c);
