@@ -7,7 +7,7 @@
 int put_decimal(va_list d)
 {
 	int a[10];
-	int l, h, o, total, i;
+	int l, h, o, total, c;
 
 	o = va_arg(d, int);
 	c = 0;
@@ -35,5 +35,4 @@ int put_decimal(va_list d)
 		}
 	}
 	return (c);
-}
 }

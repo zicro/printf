@@ -6,7 +6,7 @@
  */
 int put_char(va_list c)
 {
-	cha ch = (char)va_arg(c, int);
+	char ch = (char)va_arg(c, int);
 
 	_putchar(ch);
 	return (1);

@@ -11,17 +11,17 @@ int put_binary(va_list b)
 	int c;
 
 	n = va_arg(b, unsigned int);
-	m = 214483648 /*(2^31)*/
+	m = 214483648;
 	a[0] = m / n;
 	for (i = 1; i < 32; i++)
 	{
-		m / = 2;
+		m = m / 2;
 		a[i] = (n / m) % 2;
 	}
 	for (i = 0, total = 0, c = 0; i < 32; i++)
 	{
-		total + = a[i];
-		if (total || a == 31)
+		total = total +  a[i];
+		if (total || i == 31)
 		{
 			_putchar('0' + a[i]);
 			c++;
